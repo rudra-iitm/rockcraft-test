@@ -4,6 +4,7 @@ version: '0.1'
 summary: CUPS-based printing stack Rock
 description: Complete printing environment in a OCI container
 license: Apache-2.0
+adopt-info: cups
 
 run-user: _daemon_
 
