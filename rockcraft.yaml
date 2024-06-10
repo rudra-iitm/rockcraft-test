@@ -24,7 +24,7 @@ parts:
   cups:
     source: https://github.com/OpenPrinting/cups.git
     source-type: git
-    source-tag: 'v2.4.7'
+    source-tag: 'v2.4.8'
     source-depth: 1
     plugin: autotools
     autotools-configure-parameters:
@@ -120,7 +120,7 @@ parts:
   qpdf:
     source: https://github.com/qpdf/qpdf/
     source-type: git
-    source-tag: 'v11.8.0'
+    source-tag: 'v11.9.1'
     source-depth: 1
     plugin: cmake
     cmake-parameters:
