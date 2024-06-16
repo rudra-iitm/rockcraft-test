@@ -57,16 +57,6 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Debug Environment Variables
-        run: |
-          echo "USERNAME: ${{ secrets.DOCKER_USERNAME }}"
-          IMAGE="$(yq '.name' rockcraft.yaml)"
-          VERSION="$(yq '.version' rockcraft.yaml)"
-          ROCK="$(ls *.rock | tail -n 1)"
-          echo "IMAGE: ${IMAGE}"
-          echo "VERSION: ${VERSION}"
-          echo "ROCK: ${ROCK}"
-
       - name: Build and Push Docker Image
         env:
           USERNAME: ${{ secrets.DOCKER_USERNAME }}
@@ -75,4 +65,6 @@ jobs:
           VERSION="$(yq '.version' rockcraft.yaml)"
           ROCK="$(ls *.rock | tail -n 1)"
           sudo skopeo --insecure-policy copy oci-archive:"${ROCK}" docker-daemon:"${USERNAME}/${IMAGE}:${VERSION}"
+          docker tag ${USERNAME}/${IMAGE}:${VERSION} ${USERNAME}/${IMAGE}:latest
           docker push ${USERNAME}/${IMAGE}:${VERSION}
+          docker push ${USERNAME}/${IMAGE}:latest
