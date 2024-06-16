@@ -52,10 +52,11 @@ jobs:
 
       - name: Build and Push Docker Image
         env:
+          USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        run: |
+          ls
           IMAGE: "$(yq '.name' rockcraft.yaml)"
           VERSION: "$(yq '.version' rockcraft.yaml)"
           ROCK: "$(ls *.rock | tail -n 1)"
-          USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        run: |
           sudo skopeo --insecure-policy copy oci-archive:"${ROCK}" docker-daemon:"${USERNAME}/${IMAGE}:${VERSION}"
           docker push ${USERNAME}/${IMAGE}:${VERSION}
