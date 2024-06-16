@@ -47,7 +47,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          sudo snap install --devmode --channel edge skopeo
+          sudo snap install rockcraft --classic --channel=edge
           sudo snap install yq
 
       - name: Build and Push Docker Image
