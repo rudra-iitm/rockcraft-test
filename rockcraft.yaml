@@ -23,7 +23,7 @@ parts:
   cups:
     source: https://github.com/OpenPrinting/cups.git
     source-type: git
-    source-tag: 'v2.4.9'
+    source-tag: 'v2.4.10'
     source-depth: 1
     plugin: autotools
     autotools-configure-parameters:
