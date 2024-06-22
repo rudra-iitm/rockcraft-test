@@ -7,7 +7,7 @@ license: Apache-2.0
 
 run-user: _daemon_
 
-# adopt-info: cups
+adopt-info: cups
 
 platforms:
     arm64:
