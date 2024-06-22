@@ -1,6 +1,6 @@
 name: cups-rock-dev
 base: ubuntu@22.04
-version: '2.4.10-1'
+version: '2.4.9-1'
 summary: CUPS-based printing stack Rock
 description: Complete printing environment in a OCI container
 license: Apache-2.0
@@ -25,7 +25,7 @@ parts:
   cups:
     source: https://github.com/OpenPrinting/cups.git
     source-type: git
-    source-tag: 'v2.4.10'
+    source-tag: 'v2.4.9'
     source-depth: 1
     plugin: autotools
     autotools-configure-parameters:
