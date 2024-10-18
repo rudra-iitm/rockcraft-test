@@ -205,7 +205,7 @@ parts:
   libcupsfilters:
     source: https://github.com/OpenPrinting/libcupsfilters
     source-type: git
-    source-tag: 2.0.0
+    source-tag: '2.1.0'
     source-depth: 1
     plugin: autotools
     autotools-configure-parameters:
@@ -270,7 +270,7 @@ parts:
   libppd:
     source: https://github.com/OpenPrinting/libppd
     source-type: git
-    source-tag: 2.0.0
+    source-tag: '2.1.0'
     source-depth: 1
     plugin: autotools
     # We only need libppd itself
